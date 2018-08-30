@@ -1,4 +1,6 @@
-# hackerman-news
+# Hackerman News
+
+💾📟 Hacker News clone with an Eighties twist 💾📟
 
 ## Project setup
 ```
