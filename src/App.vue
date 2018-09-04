@@ -9,6 +9,13 @@
 </template>
 
 <style lang="scss">
+  // Colors
+  $burnt-orange: #FF6C11;
+  $dayglow: #FF3864;
+  $miami-blue: #2DE2E6;
+  $future-grey: #261447;
+  $midnight: #0D0221;
+
   body {
     color: #222;
     background: #f4f4f4;
@@ -52,4 +59,43 @@
   *:focus {
     outline: none;
   }
+  .flex-row {
+    display: flex;
+
+    &.stretch {
+      justify-content: stretch;
+    }
+    &.space-between {
+      justify-content: space-between;
+    }
+    &.center {
+      justify-content: center;
+    }
+    &.flex-end {
+      justify-content: flex-end;
+    }
+    &.space-around {
+      justify-content: space-around;
+    }
+    &.space-evenly {
+      justify-content: space-evenly;
+    }
+
+  }
+  .flex-1 {
+    flex: 1;
+  }
+  .flex-2 {
+    flex: 2;
+  }
+  .flex-3 {
+    flex: 3;
+  }
+  .flex-4 {
+    flex: 4;
+  }
+  .flex-5 {
+    flex: 5;
+  }
+
 </style>

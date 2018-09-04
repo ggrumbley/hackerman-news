@@ -1,20 +1,32 @@
 <template>
-  <div class="table-row">
-    <span class="large-column">
-      <a href="#">title</a>
-    </span>
-    <span class="mid-column">author</span>
-    <span class="small-column">comments</span>
-    <span class="small-column">points</span>
-    <span class="small-column">
-      <button class="button-inline">Dismiss</button>
-    </span>
+  <div class="table">
+    <div class="table-header flex-row space-between">
+      <span class="flex-4">Title</span>
+      <span class="flex-3">Author</span>
+      <span class="flex-1">Comments</span>
+      <span class="flex-1">Points</span>
+      <span class="flex-1">Archive</span>
+    </div>
+    <div class="table-row flex-row"
+         v-for="(item, i) in list"
+         :key="i">
+      <span class="flex-4"><a :href="item.url">{{item.title}}</a></span>
+      <span class="flex-3">{{item.author}}</span>
+      <span class="flex-1">{{item.num_comments}}</span>
+      <span class="flex-1">{{item.points}}</span>
+      <span class="flex-1"><button class="button-inline">Dismiss</button></span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Table',
+  computed: {
+    list() {
+      return this.$store.state.placeholderData;
+    },
+  },
 };
 </script>
 
@@ -24,11 +36,9 @@ export default {
     margin: 20px 0;
   }
   .table-header {
-    display: flex;
     line-height: 24px;
     font-size: 16px;
     padding: 0 10px;
-    justify-content: space-between;
 
     > span {
       overflow: hidden;
@@ -42,7 +52,6 @@ export default {
     font-size: 16px;
   }
   .table-row {
-    display: flex;
     line-height: 24px;
     white-space: nowrap;
     margin: 10px 0;
@@ -55,14 +64,5 @@ export default {
       text-overflow: ellipsis;
       padding: 0 5px;
     }
-  }
-  .large-column {
-    width: 40%;
-  }
-  .mid-column {
-    width: 30%;
-  }
-  .small-column {
-    width: 10%;
   }
 </style>
