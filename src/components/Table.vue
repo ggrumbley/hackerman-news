@@ -2,7 +2,7 @@
   <div class="table">
     <div class="table-header flex-row space-between">
       <span class="flex-4">Title</span>
-      <span class="flex-3">Author</span>
+      <span class="flex-2">Author</span>
       <span class="flex-1">Comments</span>
       <span class="flex-1">Points</span>
       <span class="flex-1">Archive</span>
@@ -31,7 +31,9 @@ export default {
 </script>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
+  @import "./../styles/vars";
+
   .table {
     margin: 20px 0;
   }
@@ -43,7 +45,17 @@ export default {
     > span {
       overflow: hidden;
       text-overflow: ellipsis;
-      padding: 0 5px;
+      color: $chrome;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 20px;
+      font-weight: 1000;
+      line-height: 1.2;
+      text-transform: uppercase;
+      background: -webkit-linear-gradient(top, #151C60, #C6CBF5 40%, black 40%, #E1A0CE 65%, white);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: white;
     }
   }
   .table-empty {

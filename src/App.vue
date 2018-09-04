@@ -9,17 +9,19 @@
 </template>
 
 <style lang="scss">
-  // Colors
-  $burnt-orange: #FF6C11;
-  $dayglow: #FF3864;
-  $miami-blue: #2DE2E6;
-  $future-grey: #261447;
-  $midnight: #0D0221;
+  // @import "~/style/_vars.scss";
 
   body {
-    color: #222;
-    background: #f4f4f4;
-    font: 400 14px CoreSans, Arial,sans-serif;
+    // color: #222;
+    // background: #f4f4f4;
+    // font: 400 14px CoreSans, Arial,sans-serif;
+    background-color: #000000;
+    margin: 0px;
+    overflow: hidden;
+    background-image: radial-gradient(ellipse farthest-corner at center top, #23233f 0%, #000000 60%);
+    background-image: url(../public/img/arcade.jpg);
+    background-size: cover;
+    background-position: top center;
   }
 
   a {
