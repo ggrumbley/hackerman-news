@@ -1,7 +1,13 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
 
 Vue.use(Vuex);
+
+const DEFAULT_QUERY = "eighties";
+const PATH_BASE = 'https://hn.algolia.com/api/v1';
+const PATH_SEARCH = '/search';
+const PARAM_SEARCH = 'query=';
 
 export default new Vuex.Store({
   state: {
@@ -28,6 +34,10 @@ export default new Vuex.Store({
 
   },
   actions: {
-
+    FETCH_STORIES: (searchTerm) => {
+      axios(`${PATH_BASE}${PATH_SEARCH}?${PARAM_SEARCH}${DEFAULT_QUERY}`)
+        .then(result => this.setSearchTopStories(result))
+        .catch(error => error);
+    }
   },
 });
